@@ -116,9 +116,17 @@ class Nextpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Page 2"),
-      ),
-    );
+        appBar: AppBar(
+          title: const Text("Page 2"),
+        ),
+        backgroundColor: Colors.black38,
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              print('wow! Flutter Developer');
+            },
+            child: const Text('welcome Page2'),
+          ),
+        ));
   }
 }
