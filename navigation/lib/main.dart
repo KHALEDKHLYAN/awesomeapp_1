@@ -50,6 +50,9 @@ class Secondpage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Secondpage'),
       ),
+      body: const Center(
+        child: Text('Wellcome to the Second Page'),
+      ),
     );
   }
 }

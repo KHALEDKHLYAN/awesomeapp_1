@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
               ? Container(
                   width: double.infinity,
                   height: double.infinity,
-                  color: Colors.red,
+                  color: Colors.black54,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,12 +53,15 @@ class _MyAppState extends State<MyApp> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          setState(() {
-                            buttonName =
-                                'clicked'; // Change the button label when pressed
-                          });
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const Nextpage(),
+                            ),
+                          );
                         },
-                        child: Text(buttonName), // Display the button label
+                        child:
+                            const Text('Next Page'), // Display the button label
                       ),
                     ],
                   ),
@@ -75,6 +78,10 @@ class _MyAppState extends State<MyApp> {
               label: 'Settings',
               icon: Icon(Icons.settings),
             ),
+            BottomNavigationBarItem(
+              label: 'ShoppingCart',
+              icon: Icon(Icons.add_shopping_cart),
+            ),
           ],
           currentIndex:
               currentIndex, // Set the current index of the bottom navigation bar
@@ -85,6 +92,19 @@ class _MyAppState extends State<MyApp> {
             });
           },
         ),
+      ),
+    );
+  }
+}
+
+class Nextpage extends StatelessWidget {
+  const Nextpage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Page 2"),
       ),
     );
   }
